@@ -1,0 +1,307 @@
+// fonts
+$hc-font-size-base = 14px
+$hc-font-size-base-rem = ($hc-font-size-base / 1px) / 16 * 1rem
+
+$hc-font-size-small = 0.79rem
+$hc-font-size-normal = 1rem
+$hc-font-size-large = 1.143rem
+
+$hc-font-size-h1 = 2.5rem
+$hc-font-size-h2 = 2rem
+$hc-font-size-h3 = 1.5rem
+$hc-font-size-h4 = 16px
+$hc-font-size-h6 = 1rem
+
+$hc-font-weight-light = 300
+$hc-font-weight-semibold = 600
+
+$hc-headings-font-weight = $hc-font-weight-light
+
+$hc-line-height-h1 = 3.5rem
+$hc-line-height-h2 = 2.5rem
+$hc-line-height-h3 = 2rem
+$hc-line-height-normal = 1.5rem
+$hc-line-height-small = 1.14rem
+
+$hc-font-family = Open Sans, sans-serif
+
+// colors
+$hc-darkyellow = #D9BD43
+$hc-deepyellow = #665925
+$hc-yellow = #FAD73C
+$hc-yellow-extra-heavy-opacified = rgba($hc-yellow, 0.9)
+$hc-lightyellow = #FAE896
+$hc-lightyellow-heavy-opacified = rgba($hc-lightyellow, 0.85)
+$hc-sun-yellow = #F0C400
+
+$hc-blue = #0058A3
+$hc-lightblue = #DAEDF8
+$hc-darkblue = #043967
+$hc-deepcyan = #254D66
+$hc-darkcyan = #3E81AB
+$hc-cyan = #51A9E0
+$hc-lightcyan = #C8E7FA
+
+$hc-deepgreen = #315928
+$hc-green = #54B13F
+$hc-darkgreen = #4D8C3F
+$hc-lightgreen = #D4F0CE
+$hc-forestGreen = #53B03F
+
+$hc-deepred = #75211B
+$hc-darkred = #B13228
+$hc-lightred = #F5C9C4
+$hc-red = #E8402D
+
+$hc-gray10 = #F5F6F7
+$hc-gray20 = #EDF0F2
+$hc-gray30 = #DFE2E6
+$hc-gray40 = #C2C7CC
+$hc-gray50 = #8A9299
+$hc-gray60 = #525C66
+$hc-gray70 = #C2C8CC
+$hc-gray60-semi-opacified = rgba($hc-gray60, 0.5)
+$hc-gray60-heavy-opacified = rgba($hc-gray60, 0.8)
+$hc-gray10-full-opacified = rgba($hc-gray10, 0)
+
+$hc-black = #333333
+$hc-black-semi-opacified = rgba($hc-black, 0.5)
+$hc-white = #FFFFFF
+$hc-white-semi-opacified = rgba($hc-white, 0.5)
+$hc-white-full-opacified = rgba($hc-white, 0)
+
+$auth-error = #FAD9D5
+
+// distances
+$small-distance = 0.5rem
+$medium-distance = 1rem
+$large-distance = 1.5rem
+$xlarge-distance = 2rem
+$xxlarge-distance = 2.5rem
+$xxxlarge-distance = 3rem
+
+// responsive
+$hc-screen-sm-max = 749px
+
+// base styles
+$link-color = $hc-blue
+$link-hover-color = $hc-cyan
+
+// lock specific
+$lock-margin = 33px
+$lock-icon-input-width = 40px
+
+// mixins
+auth0-input-icon($icon)
+  font-family 'hc-iconfont'
+  content $icon
+  position absolute
+  left 0
+  top 0
+  line-height 3rem
+  width $lock-icon-input-width
+  display inline-flex
+  vertical-align middle
+  color $hc-gray50
+  font-size $hc-font-size-h3
+  padding 1px 9px
+
+.auth0-lock.auth0-lock
+  font-family $hc-font-family
+
+  &.auth0-lock-opened-in-frame
+    margin 0
+    width 358px
+
+  .auth0-global-message
+    padding-left $xlarge-distance
+    padding-right $xlarge-distance
+    font-weight normal
+    text-transform none
+    text-align left
+    margin-top $medium-distance
+
+    &.auth0-global-message-error
+      background-color $auth-error
+    &.auth0-global-message-success
+      background-color $auth-success
+
+    span
+      color $hc-black
+      font-size $hc-font-size-normal
+      line-height $hc-line-height-normal
+
+  .auth0-loading-container .auth0-loading
+    top -4px
+
+  .auth0-lock-input-block
+    margin-bottom $medium-distance
+    &.animated
+      -webkit-animation-duration 0s
+      animation-duration 0s
+
+  .auth0-lock-widget
+    width 100%
+
+  .auth0-lock-widget-container
+    padding 0
+
+  .auth0-lock-content
+    padding 0
+
+  .auth0-lock-form
+    margin 1.5rem $lock-margin 0 $lock-margin
+
+  .auth0-lock-input-block.auth0-lock-input-email .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon span
+    &::before
+      auth0-input-icon('\E601')
+    svg
+      display none
+
+  .auth0-lock-input-block.auth0-lock-input-password .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon span
+    &::before
+      auth0-input-icon('\E608')
+    svg
+      display none
+
+  .auth0-lock-error .auth0-lock-input-wrap
+    border-color $hc-red
+
+  .auth0-lock-input-wrap
+    border-radius 0
+    border 1px solid $hc-gray40
+    height $xxxlarge-distance
+    background $hc-gray10
+
+    &.auth0-lock-input-wrap-with-icon
+      padding-left $lock-icon-input-width
+
+    .auth0-lock-input
+      height $xxxlarge-distance
+      font-size $hc-font-size-normal
+      line-height $hc-line-height-normal
+
+      &::placeholder, &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder
+        color: $hc-gray50
+
+  .auth0-lock-error-msg
+    position relative
+    left auto
+    box-shadow none
+
+    span
+      border-radius: 0
+      padding: 0
+      color: $hc-red
+      font-size: $hc-font-size-small
+      line-height: $hc-line-height-small
+
+    &::after
+      display none
+
+  .auth0-lock-form
+    div.auth0-lock-pane-separator
+      padding 0
+
+    h2
+      color $hc-black
+      font-size $hc-font-size-h2
+      line-height $hc-font-size-h2
+      margin-bottom $large-distance
+      font-weight 300
+
+    p
+      color $hc-black
+      margin $large-distance 0 $medium-distance 0
+      line-height $hc-line-height-normal
+      font-size $hc-font-size-normal
+      span
+        color $hc-black
+
+    .auth0-lock-alternative
+      margin-top $medium-distance
+      margin-bottom $large-distance
+      line-height $small-distance
+      font-size 0
+
+      .auth0-lock-alternative-link
+        color $link-color
+        font-size 12px
+        line-height $small-distance
+        &:hover
+          color $link-hover-color
+
+  .auth0-lock-social-button
+    margin 0
+
+  .auth0-lock-social-buttons-container
+    height 40px
+
+  .auth0-lock-submit
+    border-radius 0
+    font-size 1.43rem
+    font-weight $hc-font-weight-semibold
+    line-height $hc-line-height-normal
+    height 52px
+    transition none
+    padding 0
+    letter-spacing normal
+    text-transform none
+    background-color $hc-yellow !important
+    border-bottom 4px solid $hc-darkyellow !important
+    margin 0 $lock-margin $xlarge-distance $lock-margin
+    width "calc(100% - 2 * %s)" % $lock-margin
+
+    &:hover, &:active
+      background-color $hc-cyan !important
+      border-bottom 4px solid $hc-darkcyan !important
+      &:not([disabled]) span
+        color $hc-white
+        transition none
+        transform scale(1)
+        svg
+          g g
+            fill $hc-white
+
+    &:not([disabled])
+      span
+        color $hc-blue
+        svg
+          vertical-align baseline
+          g g
+            fill $hc-blue
+
+    span
+      svg.icon-text
+        height $hc-font-size-normal
+        width 10px
+        margin 5px 0 0 11px
+
+    .auth0-label-submit
+      line-height $hc-line-height-normal
+      height auto
+      font-weight $hc-font-weight-semibold
+      margin-left -5px
+      transition none
+
+  .auth0-lock-header
+    display none
+
+  .auth0-lock-password-strength
+    background $hc-white
+    color $hc-black
+    padding $medium-distance
+    left 12px
+    bottom 52px
+    width 17rem
+    box-shadow 1px 2px 10px 0 rgba(81, 92, 102, 0.5)
+
+    ul
+      padding 0
+      li
+        color $hc-black
+        line-height $hc-line-height-normal
+
+    &::after
+      left 50%
+      border-top-color $hc-white
