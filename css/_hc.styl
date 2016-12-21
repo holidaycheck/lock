@@ -70,6 +70,7 @@ $hc-white = #FFFFFF
 $hc-white-semi-opacified = rgba($hc-white, 0.5)
 $hc-white-full-opacified = rgba($hc-white, 0)
 
+$auth-success = #C1F2B6
 $auth-error = #FAD9D5
 
 // distances
@@ -139,6 +140,8 @@ auth0-input-icon($icon)
     &.animated
       -webkit-animation-duration 0s
       animation-duration 0s
+    &:last-child
+      margin-bottom: 1rem
 
   .auth0-lock-widget
     width 100%
@@ -262,6 +265,9 @@ auth0-input-icon($icon)
         svg
           g g
             fill $hc-white
+
+    &:focus
+      box-shadow: none
 
     &:not([disabled])
       span
