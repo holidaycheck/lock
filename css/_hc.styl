@@ -63,6 +63,7 @@ $hc-gray70 = #C2C8CC
 $hc-gray60-semi-opacified = rgba($hc-gray60, 0.5)
 $hc-gray60-heavy-opacified = rgba($hc-gray60, 0.8)
 $hc-gray10-full-opacified = rgba($hc-gray10, 0)
+$input-placeholder-color = #999999
 
 $hc-black = #333333
 $hc-black-semi-opacified = rgba($hc-black, 0.5)
@@ -98,14 +99,12 @@ auth0-input-icon($icon)
   content $icon
   position absolute
   left 0
-  top 0
-  line-height 3rem
+  bottom 0
+  line-height 40px
   width $lock-icon-input-width
-  display inline-flex
-  vertical-align middle
   color $hc-gray50
   font-size $hc-font-size-h3
-  padding 1px 9px
+  padding 0 9px
 
 .auth0-lock.auth0-lock
   font-family $hc-font-family
@@ -173,7 +172,6 @@ auth0-input-icon($icon)
   .auth0-lock-input-wrap
     border-radius 0
     border 1px solid $hc-gray40
-    height $xxxlarge-distance
     background $hc-gray10
 
     &.auth0-lock-input-wrap-with-icon
@@ -184,8 +182,16 @@ auth0-input-icon($icon)
       font-size $hc-font-size-normal
       line-height $hc-line-height-normal
 
-      &::placeholder, &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder
-        color: $hc-gray50
+      &::placeholder
+        color: $input-placeholder-color
+      &::-webkit-input-placeholder
+        color: $input-placeholder-color
+      &::-moz-placeholder
+        color: $input-placeholder-color
+      &:-ms-input-placeholder
+        color: $input-placeholder-color
+      &:-moz-placeholder
+        color: $input-placeholder-color
 
   .auth0-lock-error-msg
     position relative
