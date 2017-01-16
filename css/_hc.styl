@@ -149,7 +149,13 @@ auth0-input-icon($icon)
     padding 0
 
   .auth0-lock-content
-    padding: 1.5rem $lock-margin 0 $lock-margin
+    padding 0
+
+  .auth0-lock-form
+    padding 1.5rem $lock-margin 0 $lock-margin
+
+    .auth-lock-social-buttons-pane
+      margin-bottom 1.5rem
 
   .auth0-lock-input-block.auth0-lock-input-email .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon span
     &::before
@@ -218,7 +224,7 @@ auth0-input-icon($icon)
 
     p
       color $hc-black
-      margin $large-distance 0 $medium-distance 0
+      margin 0 0 $medium-distance 0
       line-height $hc-line-height-normal
       font-size $hc-font-size-normal
       span
