@@ -114,13 +114,53 @@ auth0-input-icon($icon)
     margin 0
     width 358px
 
+  .auth0-lock-tabs-container
+    margin 0
+    height auto
+
+  .auth0-lock-tabs
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: $large-distance;
+    border: none;
+    box-shadow: none;
+    letter-spacing: normal;
+    width: $auth0-tabs-width;
+
+    li
+      z-index 2
+      box-shadow 0 0 0 1px $hc-gray40
+      background-color $hc-white
+      height 2.25rem
+
+      a
+        height 2.25rem
+        width 100%
+        padding 0
+        font-weight $hc-font-weight-semibold
+        color $hc-black
+        text-transform uppercase
+        display flex
+        justify-content center
+        align-items center
+
+    li:first-child
+      margin-right 1px
+
+    li.auth0-lock-tabs-current
+      z-index 3
+      box-shadow 0 0 0 1px $hc-darkyellow
+      background-color $hc-lightyellow
+
+      a
+        color $hc-deepyellow
+
   .auth0-global-message
     padding-left $xlarge-distance
     padding-right $xlarge-distance
     font-weight normal
     text-transform none
     text-align left
-    margin-top $medium-distance
 
     &.auth0-global-message-error
       background-color $auth-error
