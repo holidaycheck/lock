@@ -93,6 +93,9 @@ $link-hover-color = $hc-cyan
 $lock-margin = 33px
 $lock-icon-input-width = 40px
 
+$component-upper-surface = 3
+$component-surface = 2
+
 // mixins
 auth0-input-icon($icon)
   font-family 'hc-iconfont'
@@ -128,7 +131,7 @@ auth0-input-icon($icon)
     width: $auth0-tabs-width;
 
     li
-      z-index 2
+      z-index $component-surface
       box-shadow 0 0 0 1px $hc-gray40
       background-color $hc-white
       height 2.25rem
@@ -148,7 +151,7 @@ auth0-input-icon($icon)
       margin-right 1px
 
     li.auth0-lock-tabs-current
-      z-index 3
+      z-index $component-upper-surface
       box-shadow 0 0 0 1px $hc-darkyellow
       background-color $hc-lightyellow
 
