@@ -503,7 +503,7 @@ export function loginErrorMessage(m, error, type) {
     code = "lock.mfa_invalid_code";
   }
 
-  return i18n.str(m, ["error", "login", code])
+  return i18n.html(m, ["error", "login", code])
     || i18n.str(m, ["error", "login", "lock.fallback"]);
 }
 
