@@ -142,7 +142,7 @@ function signUpError(id, error) {
     && invalidPasswordKeys[error.description])
     || error.code;
 
-  const errorMessage = i18n.str(m, ["error", "signUp", errorKey])
+  const errorMessage = i18n.html(m, ["error", "signUp", errorKey])
     || i18n.str(m, ["error", "signUp", "lock.fallback"]);
 
   swap(updateEntity, "lock", id, l.setSubmitting, false, errorMessage);
