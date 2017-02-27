@@ -198,6 +198,43 @@ auth0-input-icon($icon)
     .auth-lock-social-buttons-pane
       margin-bottom 1.5rem
 
+    .auth0-lock-input-checkbox
+      input[type=checkbox]
+        opacity 0
+        position absolute
+
+      span
+        line-height 1.45rem
+        font-size $hc-font-size-small
+        margin-left 0
+        user-select none
+
+      span, input[type=checkbox]
+        display inline-block
+        vertical-align middle
+        margin 5px
+        cursor pointer
+
+      input[type=checkbox] + span:before
+        position absolute
+        left 0
+        content ''
+        background #fff
+        border 1px solid #ccc
+        display inline-block
+        vertical-align middle
+        width 20px
+        height 20px
+        margin-right 10px
+        text-align center
+        padding 2px
+
+      input[type=checkbox]:checked + span:before
+        content "\e63a"
+        font-family hc-iconfont
+        font-size $hc-font-size-normal
+        line-height $hc-font-size-normal + 0.1rem
+
   .auth0-lock-input-block.auth0-lock-input-email .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon span
     &::before
       auth0-input-icon('\E601')
