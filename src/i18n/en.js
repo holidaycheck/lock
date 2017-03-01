@@ -44,8 +44,6 @@ export default {
     signUp: "Thanks for signing up."
   },
   blankErrorHint: "Can't be blank",
-  blankErrorHintEmail: "Can't be blank",
-  blankErrorHintPassword: "Can't be blank",
   codeInputPlaceholder: "your code",
   databaseEnterpriseLoginInstructions: "",
   databaseEnterpriseAlternativeLoginInstructions: "or",
@@ -60,7 +58,6 @@ export default {
   forgotPasswordInstructions: "Please enter your email address. We will send you an email to reset your password.",
   forgotPasswordSubmitLabel: "Send email",
   invalidErrorHint: "Invalid",
-  invalidErrorHintEmail: "Invalid",
   lastLoginInstructions: "Last time you logged in with",
   loginAtLabel: "Log in at %s",
   loginLabel: "Log In",
