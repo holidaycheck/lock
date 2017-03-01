@@ -1,3 +1,5 @@
+$input-checkbox-size = 20px;
+
 // fonts
 $hc-font-size-base = 14px
 $hc-font-size-base-rem = ($hc-font-size-base / 1px) / 16 * 1rem
@@ -199,6 +201,11 @@ auth0-input-icon($icon)
       margin-bottom 1.5rem
 
     .auth0-lock-input-checkbox
+      margin: $large-distance 0
+
+      label
+        margin 0
+
       input[type=checkbox]
         opacity 0
         position absolute
@@ -212,25 +219,26 @@ auth0-input-icon($icon)
       span, input[type=checkbox]
         display inline-block
         vertical-align middle
-        margin 5px
         cursor pointer
+        line-height: 1.2rem
+        padding-left: $xlarge-distance
 
       input[type=checkbox] + span:before
         position absolute
         left 0
         content ''
-        background #fff
-        border 1px solid #ccc
+        background $hc-white
+        border 1px solid $hc-gray40
         display inline-block
         vertical-align middle
-        width 20px
-        height 20px
-        margin-right 10px
+        width $input-checkbox-size
+        height $input-checkbox-size
         text-align center
         padding 2px
 
       input[type=checkbox]:checked + span:before
         content "\e63a"
+        color $hc-black
         font-family hc-iconfont
         font-size $hc-font-size-normal
         line-height $hc-font-size-normal + 0.1rem
