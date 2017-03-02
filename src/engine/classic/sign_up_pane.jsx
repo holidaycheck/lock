@@ -1,4 +1,5 @@
 import React from 'react';
+import FirstNamePane from '../../field/first-name/first_name_pane';
 import EmailPane from '../../field/email/email_pane';
 import PasswordPane from '../../field/password/password_pane';
 import UsernamePane from '../../field/username/username_pane';
@@ -13,6 +14,7 @@ export default class SignUpPane extends React.Component {
 
   render() {
     const {
+      firstNameInputPlaceholder,
       emailInputPlaceholder,
       instructions,
       i18n,
@@ -60,6 +62,7 @@ export default class SignUpPane extends React.Component {
     return (
       <div>
         {header}
+        <FirstNamePane lock={model} placeholder={firstNameInputPlaceholder} />
         <EmailPane
           i18n={i18n}
           lock={model}
