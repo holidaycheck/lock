@@ -59,6 +59,7 @@ const Component = ({i18n, model}) => {
   const db = (l.hasSomeConnections(model, "database")
     || l.hasSomeConnections(model, "enterprise"))
     && <SignUpPane
+         firstNameInputPlaceholder='First name'
          emailInputPlaceholder={i18n.str("emailInputPlaceholder")}
          i18n={i18n}
          instructions={i18n.html(signUpInstructionsKey)}
