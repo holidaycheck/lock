@@ -22,7 +22,7 @@ export default class GlobalMessage extends React.Component {
           this.messageNode = messageNode;
         }}
       >
-        <span className="animated fadeInUp" dangerouslySetInnerHTML={{ __html: message }} />
+        <span className="animated fadeInUp">{message}</span>
       </div>
     );
   }
