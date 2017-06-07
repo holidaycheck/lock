@@ -1,4 +1,5 @@
 $input-checkbox-size = 20px;
+$form-width = 358px;
 
 // fonts
 $hc-font-size-base = 14px
@@ -113,11 +114,18 @@ auth0-input-icon($icon)
   z-index: 9998 // Prevents z-index conflicts with usabilla
 
   .auth0-lock-cred-pane
-    border-radius 0
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0;
+
+    .auth0-lock-view-content
+      width: $form-width;
+
 
   &.auth0-lock-opened-in-frame
     margin 0
-    width 358px
+    width: 100%;
 
   .auth0-lock-tabs-container
     margin 0
@@ -341,7 +349,7 @@ auth0-input-icon($icon)
     background-color $hc-yellow !important
     border-bottom 4px solid $hc-darkyellow !important
     margin 0 $lock-margin $xlarge-distance $lock-margin
-    width "calc(100% - 2 * %s)" % $lock-margin
+    width "calc(%s - 2 * %s)" % ($form-width $lock-margin)
 
     &:hover, &:active
       background-color $hc-cyan !important
