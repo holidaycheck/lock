@@ -153,7 +153,10 @@ function extractUIOptions(id, options) {
     popupOptions: undefined === options.popupOptions ? {} : options.popupOptions,
     primaryColor: typeof primaryColor === 'string' ? primaryColor : undefined,
     rememberLastLogin: undefined === options.rememberLastLogin ? true : !!options.rememberLastLogin,
-    authButtonsTheme: typeof authButtons === 'object' ? authButtons : {}
+    authButtonsTheme: typeof authButtons === 'object' ? authButtons : {},
+    scrollGlobalMessagesIntoView: undefined === options.scrollGlobalMessagesIntoView
+      ? false
+      : !!options.scrollGlobalMessagesIntoView
   });
 }
 
@@ -183,7 +186,8 @@ export const ui = {
   popupOptions: lock => getUIAttribute(lock, 'popupOptions'),
   primaryColor: lock => getUIAttribute(lock, 'primaryColor'),
   authButtonsTheme: lock => getUIAttribute(lock, 'authButtonsTheme'),
-  rememberLastLogin: m => tget(m, 'rememberLastLogin', getUIAttribute(m, 'rememberLastLogin'))
+  rememberLastLogin: m => tget(m, 'rememberLastLogin', getUIAttribute(m, 'rememberLastLogin')),
+  scrollGlobalMessagesIntoView: lock => getUIAttribute(lock, 'scrollGlobalMessagesIntoView')
 };
 
 const { get: getAuthAttribute } = dataFns(['core', 'auth']);
@@ -211,7 +215,8 @@ function extractAuthOptions(options) {
     sso,
     state,
     nonce
-  } = options.auth || {};
+  } =
+    options.auth || {};
 
   let { oidcConformant } = options;
 
