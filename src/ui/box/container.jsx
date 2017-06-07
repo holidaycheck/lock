@@ -29,13 +29,12 @@ const badgeSvg = (
   </svg>
 );
 
-const BottomBadge = ({ link }) => (
+const BottomBadge = ({ link }) =>
   <span className="auth0-lock-badge-bottom">
     <a href={link} target="_blank" className="auth0-lock-badge">
       Protected with {badgeSvg}
     </a>
-  </span>
-);
+  </span>;
 
 const Avatar = ({ imageUrl }) => <img src={imageUrl} className="auth0-lock-header-avatar" />;
 
