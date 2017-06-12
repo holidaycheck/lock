@@ -187,6 +187,7 @@ The appearance of the widget and the mechanics of authentication can be customiz
 - **flashMessage {Object}**: Shows an `error` or `success` flash message when Lock is shown.
   + **type {String}**: The message type, it should be `error` or `success`.
   + **text {String}**: The text to show.
+- **scrollGlobalMessagesIntoView {Boolean}**: Determines whether or not a globalMessage should be scrolled into the user's viewport. Defaults to `false`.
 
 #### Theming options
 
