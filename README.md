@@ -106,7 +106,7 @@ Lock will emit events during its lifecycle.
 - `forgot_password submit`: emitted when the user clicks on the submit button of the "Forgot password" screen.
 - `signin submit`: emitted when the user clicks on the submit button of the "Login" screen.
 - `signup submit`: emitted when the user clicks on the submit button of the "Sign up" screen.
-- `federated login`: emitted when the user clicks on a social connection button. Has the connection name and the strategy as arguments. 
+- `federated login`: emitted when the user clicks on a social connection button. Has the connection name and the strategy as arguments.
 
 ### show(options)
 
@@ -220,9 +220,9 @@ var options = {
     primaryColor: "green",
     authButtons: {
       connectionName: {
-        displayName: "...", 
-        primaryColor: "...", 
-        foregroundColor: "...", 
+        displayName: "...",
+        primaryColor: "...",
+        foregroundColor: "...",
         icon: "http://.../logo.png"
       }
     }
