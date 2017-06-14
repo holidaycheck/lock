@@ -180,6 +180,27 @@ auth0-input-icon($icon)
     &.auth0-global-message-success
       background-color $auth-success
 
+    @media (max-width: $hc-screen-sm-max)
+      width "calc(%s - 2 * %s)" % ($form-width $xlarge-distance)
+      position: relative
+
+      &.auth0-global-message-error:before
+        background-color $auth-error
+      &.auth0-global-message-success:before
+        background-color $auth-success
+
+      &:before
+        content ""
+        position absolute
+        left -100%
+        top 0
+        right -100%
+        bottom 0
+
+      .flash-message
+        z-index 1000
+        position relative
+
     span
       color $hc-black
       font-size $hc-font-size-normal
