@@ -116,8 +116,12 @@ auth0-input-icon($icon)
   .auth0-lock-cred-pane
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items stretch
     border-radius: 0;
+
+    @media (max-width: $hc-screen-sm-max) {
+      align-items center
+    }
 
     .auth0-lock-view-content
       width: $form-width;
@@ -125,7 +129,8 @@ auth0-input-icon($icon)
 
   &.auth0-lock-opened-in-frame
     margin 0
-    width: 100%;
+    width 100%
+    table-layout fixed
 
   .auth0-lock-tabs-container
     margin 0
