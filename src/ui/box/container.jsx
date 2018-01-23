@@ -141,6 +141,7 @@ export default class Container extends React.Component {
       disableSubmitButton,
       disallowClose,
       error,
+      info,
       isMobile, // TODO: not documented and should be removed (let the design team know first)
       isModal,
       isSubmitting,
@@ -219,6 +220,7 @@ export default class Container extends React.Component {
                 contentProps={contentProps}
                 disableSubmitButton={disableSubmitButton}
                 error={error}
+                info={info}
                 isSubmitting={isSubmitting}
                 logo={logo}
                 screenName={screenName}
@@ -252,6 +254,7 @@ Container.propTypes = {
   contentProps: PropTypes.object.isRequired,
   disableSubmitButton: PropTypes.bool.isRequired,
   error: PropTypes.node,
+  info: PropTypes.node,
   isMobile: PropTypes.bool.isRequired,
   isModal: PropTypes.bool.isRequired,
   isSubmitting: PropTypes.bool.isRequired,
@@ -281,9 +284,9 @@ export const defaultProps = (Container.defaultProps = {
   disableSubmitButton: false,
   isMobile: false,
   isSubmitting: false,
-  logo: `${isFileProtocol
-    ? 'https:'
-    : ''}//cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png`,
+  logo: `${
+    isFileProtocol ? 'https:' : ''
+  }//cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png`,
   primaryColor: '#ea5323',
   showBadge: true,
   scrollGlobalMessagesIntoView: true
